@@ -1,1 +1,174 @@
-/* CSS here :) */
+@import url(/css/reset.css);
+:root {
+    --main-color: #3a3633;
+    --sub-color: white;
+}
+
+body {
+    font-family: "poppins";
+}
+/* navbar */
+nav {
+    position: fixed;
+    color: var(--sub-color);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--main-color);
+    width: 100%;
+    height: 10vh;
+    top: 0;
+}
+nav svg {
+    height: 4rem;
+    width: 18rem;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: var(--sub-color);
+    padding: 0 2rem;
+}
+nav .burger {
+    display: block;
+    width: 4rem;
+    height: 3rem;
+    margin: 2rem;
+}
+nav .burger span{
+    display: block;
+    background-color: var(--sub-color);
+    height: .25rem;
+    margin: .5rem;
+}
+/* header with rocket picture */
+header {
+    height: 110vh;
+    width: 100%;
+    background-image: url("/imgs/bg.jpg");
+    background-size: 100% ;
+    background-repeat: no-repeat;
+    z-index: 0;
+    color: var(--sub-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header-container {
+    border: var(--sub-color) solid 5px;
+    height: 50vh;
+    width: 80vw;
+    display: flex;
+}
+.header-container .title {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 40%;
+    font-size: 4.5rem;
+}
+.header-container .title h1 {
+    text-align: center;
+}
+.header-container .sub-title-container {
+    width: 60%;
+    text-align: center;
+    padding: 2rem;
+    background-color: rgba(126, 117, 117, 0.5);
+}
+.header-container .sub-title-container .sub-title {
+    height: 50%;
+    width: 100%;
+    font-size: 3rem;
+}
+.sub-title-container .sub-title-text {
+    border-top: dashed;
+    text-align: center;
+    padding-top: 2rem;
+    display: flex;
+}
+/* features sections */
+.features-section {
+    height: 40vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.features-section .features-containers {
+    padding: .75rem;
+    height: 80%;
+    width: 20%;
+    border-radius: 4px;
+    box-shadow: 0px 0px 10px rgba(126, 117, 117, 0.5);
+    text-align: center;
+}
+.features-section .features-containers svg,
+.features-section .features-containers p,
+.features-section .features-containers button,
+.features-section .features-containers h2 {
+    margin: 0.5rem;
+}
+
+/* random background parts */
+.cool {
+    background-color:var(--main-color);
+    height: 80vh;
+    color: var(--sub-color);
+}
+.gradient {
+    background-image: linear-gradient( to right, var(--sub-color),#24A0eD);
+    height: 80vh;
+    color: var(--sub-color);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-evenly;
+}
+.gallery {
+    height: 80vh;
+    display:flex;
+    flex-wrap: wrap;
+}
+.gallery img {
+    width: calc(100%/3);
+    height: 50%;
+    object-fit: cover;
+}
+.contact {
+    height: 20vh;
+    text-align: center;
+}
+.contact label {
+    display: block;
+}
+.contact .checkbox {
+    margin: 0 auto;
+}
+
+/* footer */
+footer table {
+    width: 100%;
+    margin: 1rem 0;
+    border-top: solid 2px rgba(218, 210, 210, 0.5);
+}
+footer table tr {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin: 1rem 0;
+}
+footer table tr td a {
+    text-decoration: none;
+    color: var(--main-color);
+}
+
+/* media queries */
+@media only screen and (min-width: 900px){
+}
