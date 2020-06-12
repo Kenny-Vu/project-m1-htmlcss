@@ -140,13 +140,34 @@ header {
     flex-direction: column;
     justify-content: space-evenly;
 }
-.cool h2 {
+.cool > h2 {
     font-size: 5rem;
-    margin-left: 2rem;
+    margin: 0 2rem;
 }
-.cool p {
+.cool > p {
     font-size: 2rem;
-    margin-left: 2rem;
+    margin:  0 4rem 0 2rem;
+    line-height: 3rem;
+}
+.cool .cool-box {
+    position: relative;
+    border: var(--sub-color) solid thick;
+    background-color: var(--main-color);
+    height: 18vh;
+    width: 18vw;
+    top: 9rem;
+    left: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.cool .cool-box h3 {
+    font-size: 1.5rem;
+    color: red;
+}
+.cool .cool-box p {
+    text-align: center;
 }
 .gradient {
     background-image: linear-gradient( to right, var(--sub-color),#24A0eD);
@@ -165,6 +186,7 @@ header {
     font-size: 2rem;
     margin: 2rem;
 }
+/* gallery section */
 .gallery {
     height: 80vh;
     display:flex;
@@ -209,16 +231,29 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-left: 2rem;
+}
+.contact .checkbox label {
+    display: flex;
+    align-items: center;
+    padding-left: 1.5rem;
 }
 .contact .checkbox input {
-    opacity: 0;
-}
-.contact .checkbox .checkmark {
+    -webkit-appearance: none;
     border: solid rgb(189, 178, 178);
     border-radius: 4px;
     margin: 0 0.5rem;
+    height: 1rem;
+    width: 1rem;
+    outline: none;
 }
+.contact .checkbox input:checked {
+    outline: var(--main-color);
+    background-image: url(/imgs/checkbox.svg);
+    background-size: 100%;
+    background-color: var(--main-color);
+    border: solid var(--main-color);
+}
+
 /* footer */
 footer table {
     width: 100%;
@@ -236,7 +271,7 @@ footer table tr td a {
     color: var(--main-color);
 }
 
-/* media queries */
+/* media queries for mobile */
 @media only screen and (max-width: 768px){
     nav .burger {
         display: block;
