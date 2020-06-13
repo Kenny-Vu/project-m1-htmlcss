@@ -6,6 +6,7 @@
 
 body {
     font-family: "poppins";
+    position: relative;
 }
 /* navbar */
 nav {
@@ -40,11 +41,12 @@ nav ul li a{
 
 /* header with rocket picture */
 header {
-    height: 110vh;
+    
+    height: 140vh;
     width: 100%;
     background-image: url("/imgs/bg.jpg");
-    background-size: 100% ;
     background-repeat: no-repeat;
+    background-position-x: center;
     z-index: 0;
     color: var(--sub-color);
     display: flex;
@@ -54,7 +56,7 @@ header {
 .header-container {
     border: var(--sub-color) solid 5px;
     height: 50vh;
-    width: 80vw;
+    width: 80%;
     display: flex;
 }
 .header-container .title {
@@ -91,6 +93,7 @@ header {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    padding: 2rem 0;
 }
 .features-section .features-containers {
     padding: .75rem;
@@ -153,9 +156,9 @@ header {
     position: relative;
     border: var(--sub-color) solid thick;
     background-color: var(--main-color);
-    height: 18vh;
-    width: 18vw;
-    top: 9rem;
+    height: 200px;
+    width: 300px;
+    bottom: -8rem;
     left: 5rem;
     display: flex;
     flex-direction: column;
@@ -255,24 +258,37 @@ header {
 }
 
 /* footer */
-footer table {
+footer {
+    bottom: -20rem;
+    height: 40vh;
     width: 100%;
-    margin: 2rem 0 1rem 0;
-    border-top: solid 2px rgb(189, 178, 178);
-}
-footer table tr {
+    border-top: solid thin rgb(189, 178, 178);
     display: flex;
-    justify-content: space-evenly;
-    width: 100%;
-    margin: 1rem 0;
 }
-footer table tr td a {
+.footer-links {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.footer-links ul {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.footer-links li a {
     text-decoration: none;
     color: var(--main-color);
 }
 
 /* media queries for mobile */
 @media only screen and (max-width: 768px){
+    body {
+        overflow-x: hidden;
+    }
     nav .burger {
         display: block;
         width: 4rem;
@@ -288,4 +304,103 @@ footer table tr td a {
     nav ul {
         display: none;
     }
+    header {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .header-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        height: 80%;
+        width: 100%;
+        margin-top: 15rem;
+        border: none;
+    }
+    .header-container .title {
+        display: flex;
+        align-items: center;
+        height: 20%;
+        font-size: 3rem;
+        width: 100%;
+        padding-left: 1rem;
+    }
+    .header-container .sub-title-container {
+        width: 100%;
+        height: 40%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        background-color: rgba(126, 117, 117, 0.5);
+        padding:0;
+    }
+    .header-container .sub-title-container .sub-title {
+        text-align: left;
+        height: 30%;
+        width: 100%;
+        font-size: 3rem;
+        padding: 0 1rem;
+        display: flex;
+        align-items: center;
+    }
+    .sub-title-container .sub-title-text {
+        height: 50%;
+        text-align: left;
+        display: flex;
+        flex-wrap: wrap;
+        border: none;
+        padding: 1rem;
+        font-size: 1.25rem;
+    }
+/* features sections */
+    .features-section {
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        height: auto;
+    }
+    .features-section .features-containers {
+        width: 60%;
+        height: 40vh;
+        margin: 1rem 0;
+        text-align: center;
+    }
+    /* cool and gradient background part */
+    .cool {
+        justify-content: center;
+    }
+    .cool > h2 {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+    }
+    .cool > p {
+        font-size: 1.5rem;
+    }
+    .cool .cool-box {
+        align-self: center;
+        left: 0;
+    }
+    .gradient h2{
+        font-size:3.5rem;
+    }
+    .gradient p {
+        font-size: 1.5rem;
+    }
+    /* gallery */
+    .gallery {
+       height: auto;
+    }
+    .gallery img {
+        width: 100%;
+        height: 40vh;
+    }
+    /* footer */
+    footer {
+        flex-wrap: wrap;
+    }
+    .footer-links {
+        width: calc(100%/2);
+    }
+    
 }
