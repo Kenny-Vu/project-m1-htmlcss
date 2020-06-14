@@ -29,19 +29,57 @@ nav svg {
 nav ul {
     display: flex;
     position: absolute;
+    align-items: center;
     right: 0;
     list-style-type: none;
+    height: 100%;
 }
-
+nav ul li {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+nav ul li::after {
+    position: absolute;
+    content: '';
+    height: 0;
+    width: 0;
+    border-bottom: solid var(--sub-color);
+}
+nav ul li:hover:after {
+    border-bottom: solid var(--sub-color);
+    width: 9rem;
+    height: 100%;
+    transition: width 0.2s linear;
+}
 nav ul li a{
     text-decoration: none;
     color: var(--sub-color);
     padding: 0 2rem;
+    
+}
+nav ul li .first-dropdown {
+    position: absolute;
+    top: 100%;
+    height: 200%;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+}
+nav ul li .first-dropdown span {
+    height: calc(100%/3);
+    background-color: var(--main-color);
+    padding: 1rem 0;
 }
 
+nav ul li:hover > .first-dropdown {
+    display: flex;
+}
+nav ul li .first-dropdown span:hover {
+    background-color: #b1a8a2;
+}
 /* header with rocket picture */
 header {
-    
     height: 140vh;
     width: 100%;
     background-image: url("/imgs/bg.jpg");
@@ -123,6 +161,7 @@ header {
     box-shadow: 0 0 5px var(--main-color);
     width: 80%;
     border: none;
+    cursor: pointer;
 }
 .features-section .features-containers p {
     text-align: center;
@@ -165,6 +204,17 @@ header {
     justify-content: space-evenly;
     align-items: center;
 }
+@keyframes coolspin {
+    from {
+        
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.cool .cool-box:hover {
+    animation: coolspin 2s ease-out;
+}
 .cool .cool-box h3 {
     font-size: 1.5rem;
     color: red;
@@ -194,11 +244,37 @@ header {
     height: 80vh;
     display:flex;
     flex-wrap: wrap;
+    
 }
-.gallery img {
+.gallery .image {
     width: calc(100%/3);
     height: 50%;
+    overflow: hidden;
+    position: relative;
+}
+.image img {
     object-fit: cover;
+    width: 100%;
+    height: 100%;
+    transition-duration: .5s;
+}
+.image:hover > img {
+    transform: scale(1.2);
+}
+.image:hover > div {
+    opacity: 1;
+    z-index: 1;
+}
+.image .text-container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 1.5rem;
+    color: var(--sub-color);
+    opacity: 0;
 }
 /* contact */
 .contact {
@@ -213,17 +289,18 @@ header {
 }
 .contact .button-container button,
 .contact .button-container input {
-    border: solid rgb(189, 178, 178);
+    border: solid var(--main-color);
 }
 .contact .button-container input {
     border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
 }
 .contact .button-container button{
-    background-color: rgb(189, 178, 178);
+    background-color: var(--main-color);
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
     border-left: none;
+    cursor: pointer;
 }
 
 .contact-title {
@@ -284,25 +361,52 @@ footer {
     color: var(--main-color);
 }
 
-/* media queries for mobile */
+/* MEDIA QUERY !!! MOBILE SECTIONS!!! */
 @media only screen and (max-width: 768px){
     body {
         overflow-x: hidden;
     }
     nav .burger {
-        display: block;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
         width: 4rem;
-        height: 3rem;
         margin: 2rem;
+        height: 100%;
     }
     nav .burger span{
         display: block;
         background-color: var(--sub-color);
         height: .25rem;
-        margin: .5rem;
+        margin: .3rem;
+    }
+    .burger:hover + ul {
+        display: flex;
     }
     nav ul {
         display: none;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        height: 250%;
+        width: 100%;
+        background-color: var(--main-color);
+    }
+    nav ul:hover {
+        display: flex;
+    }
+    nav ul li{
+        display: flex;
+        align-items: center ;
+        justify-content: center;
+        height: calc(100%/4);
+        width: 100%;
+    }
+    nav ul li:hover{
+        background-color: #aaa39d;
     }
     header {
         width: 100%;
@@ -391,7 +495,7 @@ footer {
     .gallery {
        height: auto;
     }
-    .gallery img {
+    .gallery .image {
         width: 100%;
         height: 40vh;
     }

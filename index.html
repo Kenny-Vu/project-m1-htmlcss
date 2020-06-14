@@ -70,17 +70,23 @@
 	</g>
 		
 			</svg>
-			<ul>
-				<li><a href="#">Features</a></li>
-				<li><a href="#">Advantages</a></li>
-				<li><a href="#">Gallery</a></li>
-				<li><a href="#">Products</a></li>
-			</ul>
 			<div class="burger">
 				<span></span>
 				<span></span>
 				<span></span>
 			</div>
+			<ul>
+				<li><a href="#">Features</a></li>
+				<li><a href="#">Advantages</a></li>
+				<li><a href="#">Gallery</a></li>
+				<li><a href="#">Products</a>
+					<div class="first-dropdown"> <a href="#"></a>
+						<span><a href="#">falcon 9</a></span>
+						<span><a href="#">model s</a></span>
+						<span><a href="#">iPhone</a></span>
+					</div>
+				</li>
+			</ul>
 		</nav>
 		<div class="header-container">
 			<div class="title"><h1>Introducing Falcon 9</h1></div>
@@ -127,17 +133,47 @@
 		<p>Lorem ipsum?</p>
 	</div>
     <section class="gallery">
-		<img src="/imgs/tesla.jpg" alt="tesla">
-		<img src="/imgs/procat.jpg" alt="grumpy cat">
-		<img src="/imgs/hyperloop.jpg" alt="hyperloop train">
-		<img src="/imgs/sneakycat.jpg	" alt="sneaky cat">
-		<img src="/imgs/bfr.jpeg" alt="rocket">
-		<img src="/imgs/funnycat.jpg" alt="funny cat">
+		<div class="image">
+			<div class="text-container">
+				Our flagship car: The model S
+			</div>
+			<img src="/imgs/tesla.jpg" alt="tesla">
+		</div>
+		<div class="image">
+			<div class="text-container">
+				Cool cat
+			</div>
+			<img src="/imgs/procat.jpg" alt="grumpy cat">
+		</div>
+		<div class="image">
+			<div class="text-container">
+				Introducing: The Hyperloop
+			</div>
+			<img src="/imgs/hyperloop.jpg" alt="hyperloop train">
+		</div>
+		<div class="image">
+			<div class="text-container">
+				So sneaky
+			</div>
+			<img src="/imgs/sneakycat.jpg	" alt="sneaky cat">
+		</div>
+		<div class="image">
+			<div class="text-container">
+				BRF - Big Falcon Rocket
+			</div>
+			<img src="/imgs/bfr.jpeg" alt="rocket">
+		</div>
+		<div class="image">
+			<div class="text-container">
+				So much fun
+			</div>
+			<img src="/imgs/funnycat.jpg" alt="funny cat">
+		</div>
 	</section>
 	<h2 class="contact-title">Register to our mailing list:</h2>
 	<form class="contact">
 		<div class="button-container">
-			<input type="text">
+			<input type="text" required>
 			<button>
 				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#fff" d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
 			</button>
